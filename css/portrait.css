@@ -1,0 +1,174 @@
+@charset "UTF-8";
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Dancing Script',Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#outer-wrapper {
+  display: table;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  /* background-color: #c8687e; */
+  /* background-image: linear-gradient(to top, #f6c9c9 0%,  #eaf5a4 50%, #efaeae 100%); */
+  /* background-image: linear-gradient(to top, #c71d6f 0%, #d09693 100%); */
+  background-image: linear-gradient(45deg, #ee9ca7 0%, #ffdde1 100%);
+  padding: 10px 0;
+}
+
+#upper-container {
+  display: table-row;
+  height: 80%;
+}
+
+#lower-container {
+  display: table-row;
+  vertical-align: middle;
+  text-align: center;
+}
+
+#intermediate-layer {
+  display: table-cell;
+  vertical-align: middle;
+  padding-top: 5%;
+}
+
+#btn-container {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 20vh;
+}
+
+#main-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 1;
+  transform: translate(50, -40);
+}
+
+#top-text {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  object-fit: scale-down;
+  opacity: 1;
+}
+
+#bottom-text {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3%;
+  object-fit: scale-down;
+  opacity: 0;
+}
+
+#information {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 70%;
+  opacity: 1;
+}
+
+.btn {
+  display: relative;
+  opacity: 0;
+}
+
+#btn-map {
+  transform-origin: center;
+}
+
+#btn-photo {
+  transform-origin: center;
+}
+
+#btn-secret {
+  transform-origin: center;
+}
+
+.modal {
+  display: none;
+}
+
+.modal.is-open {
+  display: block;
+}
+
+.gallery-photo {
+  width: 30%;
+  display: inline-block;
+}
+
+#map-modal {
+  object-fit: scale-down;
+  max-width: 100%;
+  text-align: center;
+}
+
+#map-image {
+  background-size: 100%, 100%;
+  width: 100%;
+  display: inline-block;
+}
+
+#modal-2-title {
+  font-family: noto;
+  color: gray;
+}
+
+#btn-music {
+  display: none;
+  position: fixed;
+  background-image: url("../image/music_close.png");
+  background-size: 100%, 100%;
+}
+#btn-music:hover {
+  cursor: pointer;
+}
+
+.btn-icon {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+.tooltip {
+  /* display: none; */
+  text-align: center;
+  font-weight: 800;
+  font-size: 20px;
+}
+.btn-item {
+  width: 100%;
+
+  margin: 0 2px;
+}
+
+
+.btn-item:hover .tooltip {
+  display: block;
+  color: #fff;
+}
+
+
+.btn-item img {
+  margin: 0;
+}
+
+/* flex series */
+.flex {
+  display: flex;
+}
+.flex .flex_wrap {
+  flex-wrap: wrap;
+}
+.flex_center {
+  justify-content: center;
+}
