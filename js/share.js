@@ -198,10 +198,11 @@ function initMusicBtn() {
 
 function toggleMusicBtn() {
   if (isPlaying) {
-    document.getElementById("btn-music").style.backgroundImage = 'url("image/music_close.png")';
-    document.getElementById("music").pause();
-  } else {
-    document.getElementById("btn-music").style.backgroundImage = 'url("image/music_open.png")';
+     document.getElementById("btn-music").style.backgroundImage = 'url("image/music_open.png")';
     document.getElementById("music").play();
+    
+  } else {
+   document.getElementById("btn-music").style.backgroundImage = 'url("image/music_close.png")';
+    document.getElementById("music").pause();
   }
 }
