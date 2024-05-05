@@ -50,7 +50,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   lightGallery(document.getElementById('map-gallery'));
   doMainPageAnim(false, () => {
     initMusicBtnLocation();
-
     const element = document.getElementById("btn-music");
     element.style.display = 'block';
     element.addEventListener('click', toggleMusicBtn);
@@ -62,4 +61,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     setTitle();
     initUI();
   });
+  
 });
+

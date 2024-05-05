@@ -194,15 +194,34 @@ function initMusicBtn() {
   const element = document.getElementById("music");
   element.onplaying = () => { isPlaying = true; }
   element.onpause = () => { isPlaying = false; }
+  element.muted = true;
+  isPlaying=true;
 }
 
 function toggleMusicBtn() {
+  console.log(isPlaying);
   if (isPlaying) {
-     document.getElementById("btn-music").style.backgroundImage = 'url("image/music_open.png")';
-    document.getElementById("music").play();
-    
+    document.getElementById("btn-music").style.backgroundImage = 'url("image/music_close.png")';
+    // document.getElementById("music").pause();
+   pauseAudio();
+    isPlaying=true;
   } else {
-   document.getElementById("btn-music").style.backgroundImage = 'url("image/music_close.png")';
-    document.getElementById("music").pause();
+     document.getElementById("btn-music").style.backgroundImage = 'url("image/music_open.png")';
+    // document.getElementById("music").play();
+    playAudio();
+    isPlaying=false;
   }
 }
+
+//解決browser限制頁面載入時的自動撥放問題
+function playAudio() {
+  console.log('撥放音樂');
+    var audio = document.getElementById("music");
+    audio.play();
+  }
+
+  function pauseAudio() {
+    console.log('暫停音樂');
+    var audio = document.getElementById("music");
+    audio.pause();
+  }
