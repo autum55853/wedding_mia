@@ -194,20 +194,30 @@ function initMusicBtn() {
   const element = document.getElementById("music");
   element.onplaying = () => { isPlaying = true; }
   element.onpause = () => { isPlaying = false; }
-  element.muted = true;
-  isPlaying=true;
+  
+  var promise = element.play();
+ 
+if (promise !== undefined) {
+  promise.then(res => {
+    playAudio();
+      isPlaying=true;
+  }).catch(error => {
+    console.log(error);
+    alert('瀏覽器不支援自動撥放音樂, 請點擊音樂按鈕開始播放');
+      isPlaying=false;
+  });
+}
+
 }
 
 function toggleMusicBtn() {
   console.log(isPlaying);
   if (isPlaying) {
     document.getElementById("btn-music").style.backgroundImage = 'url("image/music_close.png")';
-    // document.getElementById("music").pause();
    pauseAudio();
     isPlaying=true;
   } else {
      document.getElementById("btn-music").style.backgroundImage = 'url("image/music_open.png")';
-    // document.getElementById("music").play();
     playAudio();
     isPlaying=false;
   }
@@ -225,3 +235,4 @@ function playAudio() {
     var audio = document.getElementById("music");
     audio.pause();
   }
+
