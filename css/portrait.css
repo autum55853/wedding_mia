@@ -119,6 +119,10 @@ body {
   display: inline-block;
 }
 
+#modal-1-content{
+  margin: 0;
+}
+
 #modal-2-title {
   font-family: noto;
   color: gray;
