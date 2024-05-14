@@ -1,4 +1,7 @@
 @charset "UTF-8";
+a{
+  text-decoration: none;
+}
 body {
   margin: 0;
   padding: 0;
@@ -104,12 +107,13 @@ body {
 
 .gallery-photo {
   width: 30%;
+  margin: 3px 5px;
   display: inline-block;
 }
 
-#map-modal {
+#map-modal, #photo-modal {
   object-fit: scale-down;
-  max-width: 100%;
+  max-width: 80%;
   text-align: center;
 }
 
@@ -127,11 +131,14 @@ body {
   font-family: noto;
   color: gray;
 }
+#modal-2-title::after {
+  content: ' 💑👫';
+}
 
 #btn-music {
   display: none;
   position: fixed;
-  background-image: url("../image/music_close.png");
+  /* background-image: url("../image/music_close.png"); */
   background-size: 100%, 100%;
 }
 #btn-music:hover {

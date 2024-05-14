@@ -211,13 +211,12 @@ if (promise !== undefined) {
 }
 
 function toggleMusicBtn() {
+  console.log('run toggleMusicBtn');
   console.log(isPlaying);
   if (isPlaying) {
-    document.getElementById("btn-music").style.backgroundImage = 'url("image/music_close.png")';
    pauseAudio();
     isPlaying=true;
   } else {
-     document.getElementById("btn-music").style.backgroundImage = 'url("image/music_open.png")';
     playAudio();
     isPlaying=false;
   }
@@ -228,11 +227,20 @@ function playAudio() {
   console.log('撥放音樂');
     var audio = document.getElementById("music");
     audio.play();
+    // var iframe_audio=document.getElementById("audio");
+    // iframe_audio.play();
+    //isPlaying=true;
+    document.getElementById("btn-music").style.backgroundImage = 'url("image/music_open.png")';
   }
 
   function pauseAudio() {
     console.log('暫停音樂');
     var audio = document.getElementById("music");
     audio.pause();
+    // var iframe_audio=document.getElementById("audio");
+    // iframe_audio.pause();
+    // isPlaying=false;
+        document.getElementById("btn-music").style.backgroundImage = 'url("image/music_close.png")';
+
   }
 
