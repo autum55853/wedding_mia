@@ -204,6 +204,7 @@ if (promise !== undefined) {
   }).catch(error => {
     console.log(error);
     alert('瀏覽器不支援自動撥放音樂, 請點擊音樂按鈕開始播放');
+    pauseAudio();
       isPlaying=false;
   });
 }
