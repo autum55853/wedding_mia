@@ -1,6 +1,6 @@
 var buttonSize = 0;
 function setTitle(){
-  document.getElementsByTagName("title")[0].innerHTML = "Mia & XXX Wedding Invitation";
+  document.getElementsByTagName("title")[0].innerHTML = "Mia & Yooming Wedding Invitation";
 }
 function initUI() {
   const buttonIds = ["btn-info", "btn-map", "btn-photo", "btn-secret"];

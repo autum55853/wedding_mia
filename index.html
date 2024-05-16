@@ -35,7 +35,7 @@
     <!-- 撥放音樂 -->
     <!-- <iframe src="audio/music_0422.m4a" allow="autoplay" id="audio" style="display: none"></iframe> -->
     <audio id="music" autoplay controls>
-      <source src="audio/music_0422.m4a"  type="audio/x-m4a" />
+      <source src="audio/music_0422.m4a" type="audio/x-m4a" />
     </audio>
     <div id="outer-wrapper">
       <div id="upper-container">
@@ -156,7 +156,7 @@
     <div class="modal micromodal-slide" id="modal-2" aria-hidden="true">
       <div class="modal__overlay" data-micromodal-close>
         <div
-        id="photo-modal"
+          id="photo-modal"
           class="modal__container"
           role="dialog"
           aria-modal="true"
@@ -254,5 +254,12 @@
         </div>
       </div>
     </div>
+    <script>
+            window.onpageshow = function(event) {
+          if (event.persisted) {
+              window.location.reload()
+          }
+      };
+    </script>
   </body>
 </html>
