@@ -1,11 +1,11 @@
 @charset "UTF-8";
-a{
+a {
   text-decoration: none;
 }
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Dancing Script',Verdana, Geneva, Tahoma, sans-serif;
+  font-family: "Dancing Script", Verdana, Geneva, Tahoma, sans-serif;
 }
 
 #outer-wrapper {
@@ -107,11 +107,25 @@ body {
 
 .gallery-photo {
   width: 30%;
-  margin: 3px 5px;
+  margin: 3px;
   display: inline-block;
 }
-
-#map-modal, #photo-modal {
+@media (max-width: 540px) {
+  .gallery-photo {
+    width: 100%;
+    margin: 3px 0;
+    display: inline-block;
+  }
+  .modal__container {
+    width: 90%;
+    max-height: 100%;
+    border-radius: 4px;
+    overflow-y: auto;
+    box-sizing: border-box;
+  }
+}
+#map-modal,
+#photo-modal {
   object-fit: scale-down;
   max-width: 80%;
   text-align: center;
@@ -123,7 +137,7 @@ body {
   display: inline-block;
 }
 
-#modal-1-content{
+#modal-1-content {
   margin: 0;
 }
 
@@ -132,7 +146,7 @@ body {
   color: gray;
 }
 #modal-2-title::after {
-  content: ' 💑👫';
+  content: " 💑👫";
 }
 
 #btn-music {
@@ -159,9 +173,8 @@ body {
 .btn-item {
   width: 100%;
   margin: 0 2px;
-  
 }
-.btn-item:hover{
+.btn-item:hover {
   cursor: pointer;
 }
 
@@ -170,13 +183,12 @@ body {
   color: #fff;
 }
 
-
 .btn-item img {
   margin: 0;
-  filter:drop-shadow(5px 5px 3px rgb(194, 155, 155));
+  filter: drop-shadow(5px 5px 3px rgb(194, 155, 155));
 }
-.btn-item:hover img{
-  filter:none;
+.btn-item:hover img {
+  filter: none;
 }
 
 /* flex series */
@@ -189,4 +201,3 @@ body {
 .flex_center {
   justify-content: center;
 }
-
