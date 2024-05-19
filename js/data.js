@@ -57,18 +57,18 @@ async function retrieveForYouData(id, key) {
 
   const dataArr = forYouObj;
   if (id >= dataArr.length) {
-    console.error("Wrong id: " + id + " / " + dataArr.length);
+    //console.error("Wrong id: " + id + " / " + dataArr.length);
     return null;
   }
   const item = dataArr.find((el) => {
     return el.id === id;
   });
-  console.log("item:", item);
   try {
+    console.log('decode key',key);
     console.log('decoded name:',decrypt(item.name,key));
     console.log('decoded msg:',decrypt(item.message,key));
 
-  console.log('decode key',key);
+  
     return {
       name:  decrypt(item.name, key),
       msg: decrypt(item.message, key),
