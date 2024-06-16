@@ -46,11 +46,11 @@ async function getData(url) {
 
 function decrypt(data, key) {
   const bytes = CryptoJS.AES.decrypt(data, key);
-  const original_item =  bytes.toString(CryptoJS.enc.Utf8);
+  const original_item = bytes.toString(CryptoJS.enc.Utf8);
   return original_item;
 }
 async function retrieveForYouData(id, key) {
-  //console.log('key:',key);
+  // console.log(id, key);
   const data = await getData("data/messages.json");
   const forYouObj = JSON.parse(data);
   if (!forYouObj) return null;
@@ -61,18 +61,19 @@ async function retrieveForYouData(id, key) {
     return null;
   }
   const item = dataArr.find((el) => {
-    return el.id === id;
+    // console.log('el.id:',el.id);
+    // console.log('id:',id);
+    return el.id == id;
   });
   try {
-    console.log('decode key',key);
-    console.log('decoded name:',decrypt(item.name,key));
-    console.log('decoded msg:',decrypt(item.message,key));
-
-  
+    // console.log(item);
+    const get_name = decrypt(item.name, key);
+    const get_msg = decrypt(item.message, key);
+    // console.log("decoded name:", get_name);
+    // console.log("decoded msg:", get_msg);
     return {
-      name:  decrypt(item.name, key),
-      msg: decrypt(item.message, key),
-      is11: item.is11,
+      name: get_name,
+      msg: get_msg,
     };
   } catch (e) {
     console.log("error:", e);
@@ -81,18 +82,25 @@ async function retrieveForYouData(id, key) {
 }
 
 function findGetParameter(parameterName) {
-  var result = null,
-    tmp = [];
-  //取得網址從?開始的字串
-  //console.log(location.search);
-  location.search
-    .substr(1)
-    .split("&")
-    .forEach(function (item) {
-      tmp = item.split("=");
-      if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
-    });
-  return result;
+  const urlParams = new URLSearchParams(window.location.search);
+  // var result = null,
+  //   tmp = [];
+  // // 取得網址從?開始的字串
+  // location.search
+  //   .substr(1)
+  //   .split("&")
+  //   .forEach(function (item) {
+  //     console.log('param:',item);
+  //     tmp = item.split("=");
+  //     console.log('tmp:',tmp);
+  //     if (tmp[0] === parameterName) {
+  //       // 確保 + 號不會被轉換成空格
+  //       result = decodeURIComponent(item.split("=")[1].replace(/\+/g, '%20'));
+  //     }
+  //   });
+  // return result;
+  // const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get(parameterName).replace(/\s/g, '+');
 }
 
 // function encryptSingleData(key, name, msg) {

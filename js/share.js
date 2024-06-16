@@ -151,7 +151,7 @@ function hoverButton(id, isEnter) {
 }
 
 function getForYouObject() {
-  const id = parseInt(findGetParameter('id'));
+  const id = findGetParameter('id');
   const key = findGetParameter('key');
   if (id === null || key === null) return null;
   return retrieveForYouData(id, key);
